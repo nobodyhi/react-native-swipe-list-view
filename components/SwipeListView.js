@@ -197,7 +197,10 @@ SwipeListView.propTypes = {
 	 */
 	previewOpenValue: PropTypes.number,
 
-	ListViewComponent: PropTypes.object,
+	/**
+	 * 需要实现NativeProps数据的传递
+	 */
+	ListViewComponent: PropTypes.func,
 }
 
 SwipeListView.defaultProps = {

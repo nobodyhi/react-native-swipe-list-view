@@ -109,8 +109,9 @@ class SwipeListView extends Component {
 	}
 
 	render() {
+		let {ListViewComponent} = this.props;
 		return (
-			<ListView
+			<ListViewComponent
 				{...this.props}
 				ref={ c => this.setRefs(c) }
 				onScroll={ e => this.onScroll(e) }
@@ -194,7 +195,9 @@ SwipeListView.propTypes = {
 	 * TranslateX value for the slide out preview animation
 	 * Default: 0.5 * props.rightOpenValue
 	 */
-	previewOpenValue: PropTypes.number
+	previewOpenValue: PropTypes.number,
+
+	ListViewComponent: PropTypes.object,
 }
 
 SwipeListView.defaultProps = {
@@ -205,7 +208,8 @@ SwipeListView.defaultProps = {
 	disableLeftSwipe: false,
 	disableRightSwipe: false,
 	recalculateHiddenLayout: false,
-	previewFirstRow: false
+	previewFirstRow: false,
+	ListViewComponent: ListView
 }
 
 export default SwipeListView;
